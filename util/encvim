@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ -z $1 ]; then
+    echo "Usage: encvim <filename>"
+    exit 1
+fi
+
+if [ ! -e $1 ]; then
+    echo "File does not exist, will create"
+fi     
+
+stty -echo
+read -p "Passphrase: " pass; echo
+stty echo
+
+if [ -e $1 ]; then
+    openssl enc -d -aes-256-cbc -in $1 -pass pass:$pass -out .enc.$1
+fi
+
+vim .enc.$1
+
+openssl enc -aes-256-cbc -in .enc.$1 -pass pass:$pass -out $1
+
+if [ `uname` == "Darwin" ]; then
+    srm .enc.$1
+elif [`uname` == "Linux" ]; then
+    shred -u .enc.$1
+fi

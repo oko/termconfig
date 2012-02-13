@@ -1,0 +1,11 @@
+set nu
+set background=dark
+syntax on
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set history=200
+colorscheme solarized
+

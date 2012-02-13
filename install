@@ -1,0 +1,38 @@
+#!/bin/bash
+
+########################################
+# Vim
+########################################
+
+# copy Vim RC
+cp ./vim/vimrc ~/.vimrc
+# copy Vim folders
+cp -R ./vim/vim/ ~/.vim/
+
+########################################
+# Bash
+########################################
+
+if [ `uname` == "Darwin" ]; then
+    cp ./bash/bashrc ~/.bash_profile
+    . ~/.bash_profile
+elif [ `uname` == "Linux" ]; then
+    cp ./bash/bashrc ~/.bashrc
+    . ~/.bashrc
+fi
+
+########################################
+# Git
+########################################
+
+git config --global user.name "Jacob Okamoto"
+git config --global user.email "github@oko.io"
+
+########################################
+# Utilities
+########################################
+
+# Encrypted Vim
+sudo cp ./util/encvim /usr/bin/
+
+
