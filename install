@@ -18,6 +18,7 @@ if [ `uname` == "Darwin" ]; then
     . ~/.bash_profile
 elif [ `uname` == "Linux" ]; then
     cp ./bash/bashrc ~/.bashrc
+    cp ./bash/bashrc ~/.bash_profile
     . ~/.bashrc
 fi
 
