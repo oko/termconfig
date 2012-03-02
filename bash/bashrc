@@ -2,12 +2,12 @@
 if [ `uname` == "Darwin" ]; then
     alias ls='ls -Gl'
     alias ll='ls -Gl'
-    alias la='ls -Gla'
-    alias lr='ls -RGla'
+    alias lA='ls -Gla'
+    alias lr='ls -RGlA'
 else
-    alias ls='ls --color -la'
+    alias ls='ls --color -lA'
     alias ll=ls
-    alias la=ls
+    alias lA=ls
     alias lr='ls -R'
 fi
 # 
