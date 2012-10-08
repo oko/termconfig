@@ -13,6 +13,19 @@ fi
 # 
 alias dirsz='du -c | grep total'
 
+# git aliases
+alias gc='git commit'
+alias gl='git log'
+alias gco='git checkout'
+alias gcnb='git checkout -b'
+alias gb='git branch'
+alias gch='git commit -a'
+alias gpom='git push origin master'
+alias gp='git push'
+alias gpo='git push origin'
+alias gpcb='git push origin `(git branch | grep "*" | sed "s/* //")`'
+alias gs='git status'
+
 # c
 alias grep='grep --color'
 alias search=grep
@@ -61,3 +74,7 @@ else
 fi
 
 PS1="[$PURPLE\t $NORMAL\u@\h$SSH:\W]$ "
+export HISTFILESIZE=
+export HISTSIZE=
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
