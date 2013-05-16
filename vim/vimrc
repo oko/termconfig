@@ -1,6 +1,6 @@
 set nu
 set background=dark
-set t_Co=16
+set t_Co=256
 if has("gui_running")
     set background=light
 endif
