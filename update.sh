@@ -4,6 +4,6 @@
 cp ~/.zshrc ./zshrc
 
 # Copy VIM settings
-cp -r ~/.vim ./vim/vim
+cp -r ~/.vim/* ./vim/vim/*
 cp ~/.vimrc ./vim/vimrc
 
