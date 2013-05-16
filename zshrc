@@ -62,6 +62,13 @@ alias gohome='cd ~'
 # MacPorts $PATH extension
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-PS1_HOST_DIR_LINE="[%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg[cyan]%}%d%{$reset_color%}]"
+if [ -z "$SSH_CLIENT" ]; then
+    SSH=""
+else
+    IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
+    SSH="(%{$fg[red]%}$IP$%{$reset_color%})"
+fi
+
+PS1_HOST_DIR_LINE="[%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m$SSH%{$reset_color%}:%{$fg[cyan]%}%d%{$reset_color%}]"
 export PS1="$PS1_HOST_DIR_LINE
 %{$fg[white]%}%T $%{$reset_color%} "
