@@ -66,7 +66,7 @@ if [ -z "$SSH_CLIENT" ]; then
     SSH=""
 else
     IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
-    SSH="(%{$fg[red]%}$IP$%{$reset_color%})"
+    SSH="%{$fg[red]%}($IP)%{$reset_color%}"
 fi
 
 PS1_HOST_DIR_LINE="[%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m$SSH%{$reset_color%}:%{$fg[cyan]%}%d%{$reset_color%}]"
